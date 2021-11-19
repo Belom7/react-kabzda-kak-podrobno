@@ -1,9 +1,13 @@
 import React from "react";
 
-export const AccordionTitle=()=>{
+type PropsType={
+    name:string
+}
+
+export const AccordionTitle:React.FC<PropsType>=(props)=>{
     return(
         <div>
-            <h3>Menu</h3>
+            <h3>{props.name}</h3>
         </div>
     )
 }

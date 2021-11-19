@@ -1,7 +1,11 @@
 import React from "react";
 
-export const AppTitle=()=>{
-    return(
-        <>This is App component</>
+type PropsType = {
+    title: string
+}
+
+export const AppTitle: React.FC<PropsType> = (props) => {
+    return (
+        <>{props.title}</>
     )
 }

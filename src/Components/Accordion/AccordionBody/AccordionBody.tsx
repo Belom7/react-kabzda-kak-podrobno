@@ -1,6 +1,6 @@
 import React from "react";
 
-export const AccordionBody=()=>{
+export const AccordionBody=(props:any)=>{
     return(
         <div>
             <ul>
