@@ -5,7 +5,7 @@ type PropsType={
 }
 
 export const Star:React.FC<PropsType>=(props)=>{
-        if(props.n===true){
+        if(props.n){
             return <span><b>Star</b></span>
         }else {
             return <span>Star</span>
