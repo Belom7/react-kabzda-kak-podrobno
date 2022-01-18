@@ -1,40 +1,56 @@
 import React from 'react';
-import {Rating} from "./Components/Rating/Rating";
-import {NotControlAccordion} from "./Components/NotControlAccordion/Accordion";
-import {AppTitle} from "./Components/AppTitle/AppTitle";
-import {NotControlledOnOff} from "./Components/OnOff/NotControlledOnOff/NotControlledOnOff";
-import {ControlledOnOff} from "./Components/OnOff/ControlledOnOff/ControlledOnOff";
-import {ControlAccordion} from "./Components/ControlAccordion/Accordion";
+import {ControlRating} from "./Components/ControlledComponents/ControlRating/ControlRating";
+import {AppTitle} from "./Components/ControlledComponents/AppTitle/AppTitle";
+import {ControlOnOff} from "./Components/ControlledComponents/ControlOnOff/ControlOnOff";
+import {NotControlOnOff} from "./Components/NotControlledComponents/NotControlOnOff/NotControlOnOff";
+import {ControlAccordion} from "./Components/ControlledComponents/ControlAccordion/ControlAccordion";
+import {NotControlAccordion} from "./Components/NotControlledComponents/NotControlAccordion/NotControlAccordion";
+import {NotControlRating} from "./Components/NotControlledComponents/NotControlRating/NotControlRating";
 
 
 function App(props: any) {
     return (
         <div>
-            <AppTitle title={'This is App component'}/>
-            <AppTitle title={'New title is component'}/>
-            <NotControlAccordion name={'Not Control Menu'} collapsed={false}/>
-            <NotControlAccordion name={'Not Control Menu2'} collapsed={true}/>
-            <Rating rating={0}/>
-            <Rating rating={1}/>
-            <Rating rating={2}/>
-            <Rating rating={3}/>
-            <Rating rating={4}/>
-            <Rating rating={5}/>
-                <h3>Not control</h3>
-            <NotControlledOnOff value={true}/>
-            <NotControlledOnOff value={false}/>
-            <NotControlledOnOff value={false}/>
-            <NotControlledOnOff value={false}/>
-            <NotControlledOnOff value={false}/>
-            <NotControlledOnOff value={true}/>
-                <h3>Control</h3>
-            <ControlledOnOff/>
-            <ControlledOnOff/>
-            <ControlledOnOff/>
-            <ControlledOnOff/>
-            <ControlAccordion name={'Control Menu 1'}/>
-            <ControlAccordion name={'Control Menu 2'}/>
-            <ControlAccordion name={'Control Menu 3'}/>
+            <AppTitle title={'This is Controlled Components'}/>
+
+            <h3>Control</h3>
+
+            <ControlRating rating={0}/>
+            <ControlRating rating={1}/>
+            <ControlRating rating={2}/>
+            <ControlRating rating={3}/>
+            <ControlRating rating={4}/>
+            <ControlRating rating={5}/>
+
+            <ControlOnOff value={true}/>
+            <ControlOnOff value={false}/>
+            <ControlOnOff value={false}/>
+            <ControlOnOff value={false}/>
+            <ControlOnOff value={false}/>
+            <ControlOnOff value={true}/>
+
+            <ControlAccordion name={'Control Menu'} collapsed={false}/>
+            <ControlAccordion name={'Control Menu2'} collapsed={true}/>
+
+
+            <AppTitle title={'This is Not Controlled Components'}/>
+
+            <h3>Not control</h3>
+
+            <NotControlRating/>
+            <NotControlRating/>
+            <NotControlRating/>
+            <NotControlRating/>
+            <NotControlRating/>
+
+            <NotControlOnOff/>
+            <NotControlOnOff/>
+            <NotControlOnOff/>
+            <NotControlOnOff/>
+
+            <NotControlAccordion name={'Not Control Menu 1'}/>
+            <NotControlAccordion name={'Not Control Menu 2'}/>
+            <NotControlAccordion name={'Not Control Menu 3'}/>
         </div>
     );
 }
