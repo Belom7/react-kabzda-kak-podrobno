@@ -10,9 +10,7 @@ export const NotControlAccordion: React.FC<PropsType> = (props) => {
 
     const [collapsed, setCollapsed]=useState(true)
 
-    const CallBackHandler = () => {
-        setCollapsed(!collapsed)
-    }
+    const CallBackHandler = () => {setCollapsed(!collapsed)}
 
     return (
         <div>

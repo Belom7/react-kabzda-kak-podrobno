@@ -30,10 +30,13 @@ export const NotControlOnOff=()=>{
         backgroundColor: value? 'green' : 'red'
     }
 
+    const onClick = () => {setValue(true)}
+    const offClick = () => {setValue(false)}
+
     return(
         <div>
-            <div style={styleOn} onClick={()=>setValue(true)}>On</div>
-            <div style={styleOff} onClick={()=>setValue(false)}>Off</div>
+            <div style={styleOn} onClick={onClick}>On</div>
+            <div style={styleOff} onClick={offClick}>Off</div>
             <div style={styleIndicator}></div>
         </div>
     )
