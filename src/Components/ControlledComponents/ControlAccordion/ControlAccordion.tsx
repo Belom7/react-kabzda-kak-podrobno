@@ -2,12 +2,12 @@ import React from "react";
 import {ControlAccordionTitle} from "./ControlAccordionTitle/ControlAccordionTitle";
 import {ControlAccordionBody} from "./ControlAccordionBody/ControlAccordionBody";
 
-type PropsType = {
+export type ControlAccordionPropsType = {
     name: string
     collapsed: boolean
 }
 
-export const ControlAccordion: React.FC<PropsType> = (props) => {
+export const ControlAccordion: React.FC<ControlAccordionPropsType> = (props) => {
     return (
         <div>
             <ControlAccordionTitle name={props.name}/>
