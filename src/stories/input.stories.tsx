@@ -47,8 +47,32 @@ export const GetValueOfUncontrolledInputByButtonPressFromRef = () => {
     )
 }
 
+export const ControlInput = () => {
+    const[parentValue, setParentValue] = useState('')
+    const onChangeHandler = (e:ChangeEvent<HTMLInputElement>) => setParentValue(e.currentTarget.value)
 
-export const ControlledInput = () => <input value={'Maks'}/>
+    return <input value={parentValue} onChange={onChangeHandler}/>
+}
+export const ControlCheckBox = () => {
+    const [state, setState] = useState(false)
+    const onChangeHandler = (e:ChangeEvent<HTMLInputElement>) => setState(e.currentTarget.checked)
+
+    return <><input type={'checkbox'} checked={state} onChange={onChangeHandler}/> --- {state.toString()}</>
+}
+export const ControlSelect = () => {
+    const [state, setState] = useState('none')
+    const onChangeHandler = (e:ChangeEvent<HTMLSelectElement>) => setState(e.currentTarget.value)
+
+    return <div>
+        <select onChange={onChangeHandler} value={state}>
+            <option>none</option>
+            <option value={'1'}>Moscow</option>
+            <option value={'2'}>Minsk</option>
+            <option value={'3'}>Kiev</option>
+        </select>
+        --- {state}
+    </div>
+}
 
 
 
