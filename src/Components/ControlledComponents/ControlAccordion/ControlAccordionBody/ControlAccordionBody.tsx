@@ -1,13 +1,19 @@
 import React from "react";
+import {ItemsType} from "../ControlAccordion";
 
-export const ControlAccordionBody=(props:any)=>{
+type ControlAccordionBodyPropsType = {
+    items:ItemsType[]
+    onClick:(id:string) => void
+}
+
+export const ControlAccordionBody=(props:ControlAccordionBodyPropsType)=>{
+
+    const onClickHandler = (id:string) => {props.onClick(id)}
+
     return(
         <div>
             <ul>
-                <li>1</li>
-                <li>2</li>
-                <li>3</li>
-                <li>4</li>
+                {props.items.map(i => <li key={i.id} onClick={()=>onClickHandler(i.id)}>{i.name}</li>)}
             </ul>
         </div>
     )
