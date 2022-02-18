@@ -6,9 +6,20 @@ import {NotControlOnOff} from "./Components/NotControlledComponents/NotControlOn
 import {ControlAccordion} from "./Components/ControlledComponents/ControlAccordion/ControlAccordion";
 import {NotControlAccordion} from "./Components/NotControlledComponents/NotControlAccordion/NotControlAccordion";
 import {NotControlRating} from "./Components/NotControlledComponents/NotControlRating/NotControlRating";
+import {Select} from "./Components/Select/Select";
 
 
-function App(props: any) {
+export type ItemsSelectType = {
+        id:string
+        town:string
+}
+const ItemsSelect:ItemsSelectType[] = [
+        {id:'1', town:'Moscow'},
+        {id:'2', town:'Minsk'},
+        {id:'3', town:'Kiev'},
+]
+
+function App() {
     return (
         <div>
             <AppTitle title={'This is Controlled Components'}/>
@@ -29,8 +40,8 @@ function App(props: any) {
             <ControlOnOff value={false}/>
             <ControlOnOff value={true}/>
 
-            <ControlAccordion name={'Control Menu'} collapsed={false}/>
-            <ControlAccordion name={'Control Menu2'} collapsed={true}/>
+            <ControlAccordion name={'Control Menu'} collapsed={false} />
+            <ControlAccordion name={'Control Menu2'} collapsed={true} />
 
 
             <AppTitle title={'This is Not Controlled Components'}/>
@@ -51,6 +62,9 @@ function App(props: any) {
             <NotControlAccordion name={'Not Control Menu 1'}/>
             <NotControlAccordion name={'Not Control Menu 2'}/>
             <NotControlAccordion name={'Not Control Menu 3'}/>
+
+
+                <Select name={ItemsSelect}/>
         </div>
     );
 }
